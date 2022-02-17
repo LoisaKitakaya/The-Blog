@@ -1,0 +1,124 @@
+<!-- inherit base template -->
+{% extends 'base.html' %}
+<!-- inherit base template -->
+
+<!-- load bootstrap5 -->
+{% load django_bootstrap5 %}
+<!-- load bootstrap5 -->
+
+<!-- app body begin -->
+{% block content %}
+<!-- app body begin -->
+
+<!-- body -->
+<div class="body-main container">
+  <!-- breadcrumb -->
+  <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Article Page</li>
+    </ol>
+  </nav>
+  <!-- breadcrumb -->
+
+  <!-- card -->
+  <!-- if -->
+  {% if article %}
+  <!-- if -->
+  <div class="card text-center">
+    <div class="card-header">
+      Posted by:
+      <a href="{% url 'other_user_profile' article.article_author.id %}">
+        {{ article.article_author }}
+      </a>
+    </div>
+    <div class="card-body">
+      <p class="text-muted">category: {{ article.category }}</p>
+      <p class="card-text">{{ article.content|safe }}</p>
+    </div>
+    <div class="card-footer text-muted">
+      {{ article.posted_on }} <br />
+      <!-- if -->
+      {% if user.is_authenticated %}
+      <!-- if -->
+      <span class="toggle-comment-form" id="show_form"
+        >toggle comment form</span
+      >
+      <!-- else -->
+      {% else %}
+      <!-- else -->
+      <span><a href="{% url 'login' %}">login</a> to comment</span>
+      <!-- endif -->
+      {% endif %}
+      <!-- endif -->
+    </div>
+  </div>
+  <!-- endif -->
+  {% endif %}
+  <!-- endif -->
+  <!-- card -->
+
+  <!-- comment form -->
+  <div class="card text-center" id="comment_form">
+    <div class="card-header">Post a comment...</div>
+    <div class="card-body">
+      <form method="post" id="form">
+        <!--  -->
+        {% csrf_token %}
+        <!--  -->
+        {% bootstrap_form form %}
+        <!--  -->
+        <br />
+        <button type="submit" class="btn btn-success" id="submit-form">
+          Submit
+        </button>
+      </form>
+    </div>
+    <div class="card-footer text-muted">
+      <span class="toggle-comment-form" id="hide_form">hide comment form</span>
+    </div>
+  </div>
+  <!-- comment form -->
+
+  <!-- the comments -->
+  <!-- if -->
+  {% if all_comments %}
+  <!-- if -->
+
+  <h3 class="text-muted text-center comments-title">Comments</h3>
+
+  <!-- for -->
+  {% for comments in all_comments %}
+  <!-- for -->
+  <div class="card text-center">
+    <div class="card-header">
+      <span class="text-muted">{{ comments.posted_on }}</span>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{ comments.comment }}</p>
+        <footer class="blockquote-footer">
+          Posted by:
+          <cite title="Source Title">
+            <a href="{% url 'other_user_profile' comments.comment_author.id %}"
+              >{{ comments.comment_author }}</a
+            >
+          </cite>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+  <!-- endfor -->
+  {% endfor %}
+  <!-- endfor -->
+
+  <!-- endif -->
+  {% endif %}
+  <!-- endif -->
+  <!-- the comments -->
+</div>
+<!-- body -->
+
+<!-- app body end -->
+{% endblock %}
+<!-- app body end -->

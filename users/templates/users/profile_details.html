@@ -1,0 +1,111 @@
+<!-- inherit base template -->
+{% extends 'base.html' %}
+<!-- inherit base template -->
+
+<!-- app body begin -->
+{% block content %}
+<!-- app body begin -->
+
+<!-- body -->
+<div class="body-main container">
+  <!-- breadcrumb -->
+  <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {{ this_user }}
+      </li>
+    </ol>
+  </nav>
+  <!-- breadcrumb -->
+
+  <!-- card -->
+  <div class="card text-center">
+    <div class="card-header">{{ page_title }}</div>
+    <!-- if -->
+    {% if user_details %}
+    <!-- if -->
+    <div class="card-body">
+      <h4>Username: <span class="text-muted">{{ user_details.user }}</span></h4>
+      <br />
+      <h4>
+        First name:
+        <span class="text-muted">{{ user_details.first_name }}</span>
+      </h4>
+      <br />
+      <h4>
+        Second name:
+        <span class="text-muted">{{ user_details.second_name }}</span>
+      </h4>
+      <br />
+      <p class="text-muted">Profile pic:</p>
+      <img
+        class="profile-summary-img"
+        src="{{ user_details.profile_pic.url }}"
+        alt=""
+      />
+      <br />
+      <br />
+      <h4>Bio:</h4>
+      <p class="text-muted">{{ user_details.bio }}</p>
+      <br />
+      <h4>
+        Joined on: <span class="text-muted">{{ user_details.joined_on }}</span>
+      </h4>
+      <br />
+      <h4>{{ page_subtitle }}</h4>
+      <!-- if -->
+      {% if user_articles %}
+      <!-- if -->
+
+      <!-- for -->
+      {% for article in user_articles %}
+      <!-- for -->
+      <div class="article-list">
+        <div>
+          Title: <br />
+          <span class="text-muted">{{ article.title }}</span>
+        </div>
+        <div>
+          Posted on: <br />
+          <span class="text-muted">{{ article.posted_on }}</span>
+        </div>
+        <div>
+          <br />
+          <a
+            href="{% url 'view_article' article.slug %}"
+            class="btn btn-outline-primary"
+            >View</a
+          >
+        </div>
+      </div>
+      <!-- endfor -->
+      {% endfor %}
+      <!-- endfor -->
+
+      <!-- else -->
+      {% else %}
+      <!-- else -->
+      <div class="this_user-article-list"></div>
+      <!-- endif -->
+      {% endif %}
+      <!-- endif -->
+    </div>
+    <!-- endif -->
+    {% endif %}
+    <!-- endif -->
+    <div class="card-footer">
+      Want to view/edit your profile settings? Click
+      <a href="{% url 'dashboard' %}">here</a>.
+    </div>
+  </div>
+  <!-- card -->
+</div>
+<!-- body -->
+
+<!-- app body end -->
+{% endblock %}
+<!-- app body end -->

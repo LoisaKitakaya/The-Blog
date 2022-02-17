@@ -1,0 +1,76 @@
+<!-- inherit base template -->
+{% extends 'base.html' %}
+<!-- inherit base template -->
+
+<!-- load bootstrap5 -->
+{% load django_bootstrap5 %}
+<!-- load bootstrap5 -->
+
+<!-- app body begin -->
+{% block content %}
+<!-- app body begin -->
+
+<!-- body -->
+<div class="body-main container">
+  <!-- breadcrumb -->
+  <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Search Results</li>
+    </ol>
+  </nav>
+  <!-- breadcrumb -->
+
+  <!-- card -->
+  <!-- if -->
+  {% if search_articles %}
+  <!-- if -->
+
+  <!-- for -->
+  {% for article in search_articles %}
+  <!-- for -->
+  <div class="card text-center">
+    <div class="card-header">
+      Posted by:
+      <a href="{% url 'other_user_profile' article.article_author.id %}">
+        {{ article.article_author }}
+      </a>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ article.title }}</h5>
+      <a
+        href="{% url 'view_article' article.slug %}"
+        class="btn btn-outline-primary"
+        >Read Post</a
+      >
+    </div>
+    <div class="card-footer text-muted">{{ article.posted_on }}</div>
+  </div>
+  <!-- endfor -->
+  {% endfor %}
+  <!-- endfor -->
+
+  <!-- else -->
+  {% else %}
+  <!-- else -->
+
+  <div class="card text-center">
+    <div class="card-header">Hey there {{ current_user }}..</div>
+    <div class="card-body">
+      <h5 class="card-title">What you are looking for does not exist.</h5>
+    </div>
+    <div class="card-footer text-muted">
+      Click <a href="{% url 'post_article' %}">here</a> to create an article.
+    </div>
+  </div>
+
+  <!-- endif -->
+  {% endif %}
+  <!-- endif -->
+  <!-- card -->
+</div>
+<!-- body -->
+
+<!-- app body end -->
+{% endblock %}
+<!-- app body end -->

@@ -1,0 +1,48 @@
+<!-- inherit base template -->
+{% extends 'base.html' %}
+<!-- inherit base template -->
+
+<!-- load bootstrap5 -->
+{% load django_bootstrap5 %}
+<!-- load bootstrap5 -->
+
+<!-- app body begin -->
+{% block content %}
+<!-- app body begin -->
+
+<!-- body -->
+<div class="body-main container">
+  <!-- breadcrumb -->
+  <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Login Page</li>
+    </ol>
+  </nav>
+  <!-- breadcrumb -->
+
+  <!-- card -->
+  <div class="card text-center">
+    <div class="card-header">Login To Your Account</div>
+    <div class="card-body">
+      <form method="post" class="full-form">
+        <!--  -->
+        {% csrf_token %}
+        <!--  -->
+        {% bootstrap_form form %}
+        <!--  -->
+        <br />
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+    <div class="card-footer">
+      Don't have an account? Create one <a href="{% url 'register' %}">here</a>.
+    </div>
+  </div>
+  <!-- card -->
+</div>
+<!-- body -->
+
+<!-- app body end -->
+{% endblock %}
+<!-- app body end -->

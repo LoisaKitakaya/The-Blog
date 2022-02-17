@@ -1,0 +1,70 @@
+<!-- inherit base template -->
+{% extends 'base.html' %}
+<!-- inherit base template -->
+
+<!-- app body begin -->
+{% block content %}
+<!-- app body begin -->
+
+<!-- body -->
+<div class="body-main container">
+  <!-- breadcrumb -->
+  <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+    </ol>
+  </nav>
+  <!-- breadcrumb -->
+
+  <!-- card -->
+  <div class="card text-center">
+    <div class="card-header">Dashboard</div>
+    <div class="card-body">
+      <!-- dashboard title -->
+      <h3 class="bg-success">logged in as {{ this_user }}</h3>
+      <p class="text-muted">Control all your activities from here.</p>
+      <br />
+      <!-- dashboard title -->
+      <!-- controls -->
+      <h6 class="controls-title">Profile Controls</h6>
+      <div class="controls-container">
+        <div class="controls-set">
+          <a href="{% url 'profile' %}" class="btn btn-outline-secondary"
+            >View Profile</a
+          >
+          <a
+            href="{% url 'update_profile' this_user.id %}"
+            class="btn btn-outline-secondary"
+            >Edit/Update Profile</a
+          >
+        </div>
+      </div>
+      <br />
+      <h6 class="controls-title">Article Controls</h6>
+      <div class="controls-container">
+        <div class="controls-set">
+          <a href="{% url 'post_article' %}" class="btn btn-outline-secondary"
+            >Create Article</a
+          >
+          <a href="{% url 'all_articles' %}" class="btn btn-outline-secondary"
+            >View All Articles</a
+          >
+          <!-- <a href="#" class="btn btn-outline-secondary">Edit/Update Article</a> -->
+          <!-- <a href="#" class="btn btn-outline-secondary">Delete Articles</a> -->
+        </div>
+      </div>
+      <br />
+    </div>
+    <div class="card-footer">
+      View all articles posted by <strong>The Blog</strong> users? Click
+      <a href="{% url 'home' %}">here</a>.
+    </div>
+  </div>
+  <!-- card -->
+</div>
+<!-- body -->
+
+<!-- app body end -->
+{% endblock %}
+<!-- app body end -->

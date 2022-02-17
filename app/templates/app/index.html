@@ -1,0 +1,65 @@
+<!-- inherit base template -->
+{% extends 'base.html' %}
+<!-- inherit base template -->
+
+<!-- app body begin -->
+{% block content %}
+<!-- app body begin -->
+
+<!-- body -->
+<div class="body-main container">
+  <h3 class="text-center all-articles-title">{{ page_title }}</h3>
+  <!-- card -->
+  <!-- if -->
+  {% if articles %}
+  <!-- if -->
+
+  <!-- for -->
+  {% for article in articles %}
+  <!-- for -->
+  <div class="card text-center">
+    <div class="card-header">
+      Posted by:
+      <a href="{% url 'other_user_profile' article.article_author.id %}">
+        {{ article.article_author }}
+      </a>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ article.title }}</h5>
+      <p class="text-muted">Category: {{ article.category }}</p>
+      <a
+        href="{% url 'view_article' article.slug %}"
+        class="btn btn-outline-primary"
+        >Read Article</a
+      >
+    </div>
+    <div class="card-footer text-muted">{{ article.posted_on }}</div>
+  </div>
+  <!-- endfor -->
+  {% endfor %}
+  <!-- endfor -->
+
+  <!-- else -->
+  {% else %}
+  <!-- else -->
+
+  <div class="card text-center">
+    <div class="card-header">Article header</div>
+    <div class="card-body">
+      <h5 class="card-title">No articles posted yet.</h5>
+    </div>
+    <div class="card-footer text-muted">
+      Click <a href="{% url 'post_article' %}">here</a> to create an article.
+    </div>
+  </div>
+
+  <!-- endif -->
+  {% endif %}
+  <!-- endif -->
+  <!-- card -->
+</div>
+<!-- body -->
+
+<!-- app body end -->
+{% endblock %}
+<!-- app body end -->

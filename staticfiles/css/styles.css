@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Hahmlet&family=Kanit&family=Lobster&display=swap");
+
+/* 
+font-family: 'Gideon Roman', cursive;
+font-family: 'Hahmlet', serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'Lobster', cursive;
+*/
+
+.title {
+  font-family: "Hahmlet", serif !important;
+  background: #8fbacf;
+  background: -webkit-linear-gradient(to right, #8fbacf 0%, #cf886e 100%);
+  background: -moz-linear-gradient(to right, #8fbacf 0%, #cf886e 100%);
+  background: linear-gradient(to right, #8fbacf 0%, #cf886e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.body-main {
+  font-family: "Kanit", sans-serif !important;
+  padding-bottom: 2rem;
+}
+
+.nav-menu-color {
+  background-color: rgb(39, 93, 129) !important;
+  border-bottom: 2px solid black !important;
+}
+
+body,
+html {
+  height: 110vh !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: #00b7ff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='540' height='450' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='.1'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+.offcanvas {
+  color: whitesmoke !important;
+}
+
+.divide {
+  border: 1px solid whitesmoke !important;
+}
+
+.nav-item {
+  margin: 0.25rem !important;
+}
+
+.nav-link {
+  background-color: rgba(39, 93, 129, 0.65);
+  border-radius: 0.25rem !important;
+  border: 1px solid darkkhaki !important;
+  color: whitesmoke !important;
+}
+
+.nav-link-main {
+  border: 1px solid darkcyan !important;
+}
+
+.nav-link-main:hover {
+  background-color: rgb(39, 93, 129) !important;
+  text-decoration: underline !important;
+  border: 1px solid whitesmoke !important;
+}
+
+.nav-link:hover {
+  text-decoration: underline !important;
+  border: 1px solid whitesmoke !important;
+}
+
+.foot-note {
+  font-family: "Hahmlet", serif !important;
+}
+
+.foot-note-link {
+  color: darkkhaki;
+  text-decoration: none;
+}
+
+.foot-note-link:hover {
+  color: darkkhaki;
+  text-decoration: underline;
+}
+
+.card {
+  margin: 2rem !important;
+  border: 1px solid black !important;
+}
+
+.card-header,
+.card-body,
+.card-footer {
+  border-color: black !important;
+}
+
+.full-form {
+  width: 80% !important;
+  margin: auto !important;
+}
+
+.controls-container,
+.controls-set {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.controls-set a {
+  margin: 0.5rem;
+}
+
+.controls-title {
+  text-decoration: underline;
+}
+
+.profile-summary-img {
+  border-radius: 0.5rem;
+  height: 225px;
+  width: 225px;
+}
+
+.full-detail-title {
+  text-decoration: underline;
+}
+
+.article-item,
+.article-list {
+  display: flex;
+  justify-content: space-around !important;
+  align-items: center;
+}
+
+.article-list {
+  flex-direction: row;
+}
+
+.article-list div {
+  padding: 0.5rem;
+}
+
+.article-item {
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.all-articles-title {
+  padding: 1rem;
+  text-decoration: underline;
+}
+
+.navbar-toggler {
+  position: fixed !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  z-index: 99 !important;
+}
+
+.toggle-comment-form {
+  color: blue !important;
+  cursor: pointer !important;
+}
+
+.toggle-comment-form:hover {
+  text-decoration: underline !important;
+}
+
+.comments-title {
+  text-decoration: underline !important;
+}
+
+.breadcrumb {
+  margin-top: 0.5rem !important;
+  padding: 0.25rem 0.5rem;
+  width: 95%;
+  margin: auto;
+  border-radius: 0.25rem;
+}
+
+.breadcrumb-item a {
+  color: black !important;
+}
+
+.breadcrumb a:hover {
+  color: darkblue !important;
+}
+
+.active {
+  color: whitesmoke !important;
+}
+
+.app-message {
+  position: fixed !important;
+  top: 0.5rem !important;
+  right: 1rem !important;
+  width: 30% !important;
+  z-index: 100 !important;
+}
+
+@media screen and (min-width: 240px) and (max-width: 480px) {
+  .body-container {
+    padding-top: 4rem;
+  }
+
+  .card {
+    margin: 2rem auto !important;
+  }
+}

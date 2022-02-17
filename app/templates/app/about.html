@@ -1,0 +1,45 @@
+<!-- inherit base template -->
+{% extends 'base.html' %}
+<!-- inherit base template -->
+
+<!-- app body begin -->
+{% block content %}
+<!-- app body begin -->
+
+<!-- body -->
+<div class="body-main container">
+  <!-- breadcrumb -->
+  <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">About</li>
+    </ol>
+  </nav>
+  <!-- breadcrumb -->
+
+  <div class="card text-center">
+    <div class="card-header">About</div>
+    <div class="card-body">
+      <h5 class="card-title">What is <strong>The Blog</strong>?</h5>
+      <p class="card-text">
+        <strong>The Blog</strong> is a blogging CRUD (Create, Retrieve, Update,
+        Delete) web application built using the django framework. <br />
+        The web application enables a user to: <br />
+        1. Post articles. <br />
+        2. View all or articles belonging to him/her. <br />
+        3. Update their articles as well as their user profile. <br />
+        4. Delete articles. <br />
+        On top of all these, the application also enables a user to comment on
+        other users' articles.
+      </p>
+    </div>
+    <div class="card-footer text-muted">
+      Login <a href="{% url 'login' %}">here</a> and create an article ;-)
+    </div>
+  </div>
+</div>
+<!-- body -->
+
+<!-- app body end -->
+{% endblock %}
+<!-- app body end -->
