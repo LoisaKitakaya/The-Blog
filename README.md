@@ -40,3 +40,6 @@ If you come across any bugs/issues with the code, feel free to open a [new issue
 
 ## Contributing
 [Pull requests](<https://github.com/LoisaKitakaya/The-Blog/pulls>) are welcome. For major changes, please open an [issue](<https://github.com/LoisaKitakaya/The-Blog/issues>) first to discuss what you would like to change. Make sure to run tests and migrations as appropriate.
+
+## LICENSE
+[MIT License](https://github.com/LoisaKitakaya/The-Blog/blob/main/LICENSE)
